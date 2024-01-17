@@ -1,2 +1,3 @@
-# BOJ_Solved
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+# 알고리즘 문제해결
+- 백준 (BOJ)
+- 프로그래머스
