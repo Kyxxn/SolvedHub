@@ -21,9 +21,6 @@ for _ in 0..<k {
 for i in 1...n {
     for j in 1...n {
         for k in 1...n {
-            if i == j || j == k || i == k {
-                continue
-            }
             
             if nodes[j][i] == -1 && nodes[i][k] == -1 {
                 nodes[j][k] = -1
