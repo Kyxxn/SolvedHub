@@ -1,25 +1,30 @@
+//  39분: 부분점수 50점
+//  답지 봄
+//  46분: 정답
+
+
 import Foundation
 
 let N = Int(readLine()!)!
 let M = Int(readLine()!)! // S 길이
-let S: String = readLine()!
-var answer = 0
-var standard: String = "I"
-for _ in 0..<N {
-    standard.append("OI")
-}
+let S: [Character] = readLine()!.map{ $0 }
 
-for i in 0..<M {
-    if S[S.index(S.startIndex, offsetBy: i)] == "I" {
-        if i + standard.count > M {
-            break
-        }
+var idx = 0
+var ioiCount = 0
+var answer = 0
+
+while idx < M-2 {
+    if String(S[idx...idx+2]) == "IOI" {
+        idx += 2
+        ioiCount += 1
         
-        let start = S.index(S.startIndex, offsetBy: i)
-        let end = S.index(start, offsetBy: standard.count)
-        if S[start..<end] == standard {
+        if ioiCount == N {
             answer += 1
+            ioiCount -= 1
         }
+    }else {
+        idx += 1
+        ioiCount = 0
     }
 }
 
